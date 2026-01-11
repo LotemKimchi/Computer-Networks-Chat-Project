@@ -1,0 +1,17 @@
+msg_id,app_protocol,src_app,dst_app,src_port,dst_port,message,timestamp
+1,HTTP,client_browser,web_server,50000,80,GET /home HTTP/1.1; Host: example.com,0.01
+2,HTTP,web_server,client_browser,80,50000,HTTP/1.1 200 OK; Content-Type: text/html; <html><body>Welcome</body></html>,0.035
+3,HTTP,client_browser,web_server,50000,80,GET /api/products HTTP/1.1; Host: example.com,0.05
+4,HTTP,web_server,client_browser,80,50000,"HTTP/1.1 200 OK; Content-Type: application/json; [{""id"":1,""name"":""Book""},{""id"":2,""name"":""Pen""}]",0.082
+5,HTTP,client_browser,web_server,50002,80,POST /api/login HTTP/1.1; Host: example.com; username=john&password=1234,0.11
+6,HTTP,web_server,client_browser,80,50002,HTTP/1.1 401 Unauthorized; Content-Length: 0,0.15
+7,HTTP,client_browser,web_server,50002,80,POST /api/login HTTP/1.1; Host: example.com; username=john&password=abcd,0.175
+8,HTTP,web_server,client_browser,80,50002,HTTP/1.1 200 OK; Set-Cookie: session=xyz789,0.21
+9,HTTP,client_browser,web_server,50002,80,GET /dashboard HTTP/1.1; Host: example.com; Cookie: session=xyz789,0.24
+10,HTTP,web_server,client_browser,80,50002,HTTP/1.1 200 OK; Content-Type: text/html; <html><h1>Dashboard</h1></html>,0.27
+11,HTTP,client_browser,web_server,50003,80,GET /images/logo.png HTTP/1.1; Host: example.com,0.3
+12,HTTP,web_server,client_browser,80,50003,HTTP/1.1 200 OK; Content-Type: image/png; BINARY_DATA,0.335
+13,HTTP,client_browser,web_server,50000,80,GET /logout HTTP/1.1; Host: example.com,0.36
+14,HTTP,web_server,client_browser,80,50000,HTTP/1.1 302 Redirect; Location: /home,0.395
+15,HTTP,client_browser,web_server,50000,80,GET /home HTTP/1.1; Host: example.com,0.42
+16,HTTP,web_server,client_browser,80,50000,HTTP/1.1 200 OK; Content-Type: text/html; <html><body>Logged out</body></html>,0.455
