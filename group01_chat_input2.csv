@@ -15,3 +15,4 @@ msg_id,app_protocol,src_app,dst_app,src_port,dst_port,message,timestamp
 14,HTTP,web_server,client_browser,80,50000,HTTP/1.1 302 Redirect; Location: /home,0.395
 15,HTTP,client_browser,web_server,50000,80,GET /home HTTP/1.1; Host: example.com,0.42
 16,HTTP,web_server,client_browser,80,50000,HTTP/1.1 200 OK; Content-Type: text/html; <html><body>Logged out</body></html>,0.455
+
